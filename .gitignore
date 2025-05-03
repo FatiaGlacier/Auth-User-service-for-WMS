@@ -33,4 +33,5 @@ build/
 .vscode/
 
 ###Secrets###
-db-login.properties
+src/main/resources/db-login.properties
+src/main/resources/secret.properties
