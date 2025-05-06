@@ -26,8 +26,11 @@ public class SecurityConfiguration {
                 .csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(auth ->
                         auth.requestMatchers(
-                                        "/api/v1/auth/**"
+                                        "/api/v1/auth/authenticate"
                                 ).permitAll()
+                                .requestMatchers(
+                                        "/api/v1/auth/register"
+                                ).denyAll()
                                 .requestMatchers(
                                         "/v3/api-docs/**"
                                 ).permitAll()
@@ -37,6 +40,19 @@ public class SecurityConfiguration {
                                 .requestMatchers(
                                         "/swagger-ui.html"
                                 ).permitAll()
+                                .requestMatchers(
+                                        "/api/v1/users/get-user/",
+                                        "/api/v1/users/register-manager",
+                                        "/api/v1/users/register-worker",
+                                        "/api/v1/users/update-user/",
+                                        "/api/v1/users/delete-user/"
+                                ).hasRole("ADMIN")
+                                .requestMatchers(
+                                        "/api/v1/users/get-user/",
+                                        "/api/v1/users/register-worker",
+                                        "/api/v1/users/update-user/",
+                                        "/api/v1/users/delete-user/"
+                                ).hasRole("MANAGER")
                                 .anyRequest().authenticated())
                 .sessionManagement(session ->
                         session.sessionCreationPolicy(SessionCreationPolicy.STATELESS)

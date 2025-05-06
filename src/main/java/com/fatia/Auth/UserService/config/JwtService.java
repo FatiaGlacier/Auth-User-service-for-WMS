@@ -31,7 +31,18 @@ public class JwtService {
     }
 
     public String generateToken(UserDetails userDetails) {
-        return generateToken(new HashMap<>(), userDetails);
+        Map<String, Object> extraClaims = new HashMap<>();
+        String role = getRoleFromUserDetails(userDetails); // Отримуємо роль з UserDetails
+        extraClaims.put("role", role); // Додаємо роль до claims
+
+        return generateToken(extraClaims, userDetails); // Викликаємо основну функцію
+    }
+
+    private String getRoleFromUserDetails(UserDetails userDetails) {
+        return userDetails.getAuthorities().stream()
+                .findFirst()
+                .map(Object::toString)
+                .orElseThrow();
     }
 
     public String generateToken(
@@ -43,7 +54,7 @@ public class JwtService {
                 .setClaims(extraClaims)
                 .setSubject(userDetails.getUsername())
                 .setIssuedAt(new Date(System.currentTimeMillis()))
-                .setExpiration(new Date(System.currentTimeMillis() + 1000 * 60 * 24))
+                .setExpiration(new Date(System.currentTimeMillis() + 1000 * 60 * 60 * 24))
                 .signWith(getSingInKey(), SignatureAlgorithm.HS256)
                 .compact();
     }
@@ -59,6 +70,10 @@ public class JwtService {
 
     private Date extractExpiration(String token) {
         return extractClaim(token, Claims::getExpiration);
+    }
+
+    public String extractRole(String token) {
+        return extractClaim(token, claims -> claims.get("role", String.class));
     }
 
     private Claims extractAllClaims(String token) {
