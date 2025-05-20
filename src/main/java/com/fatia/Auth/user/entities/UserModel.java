@@ -1,4 +1,4 @@
-package com.fatia.Auth.UserService.entities;
+package com.fatia.Auth.user.entities;
 
 import lombok.*;
 

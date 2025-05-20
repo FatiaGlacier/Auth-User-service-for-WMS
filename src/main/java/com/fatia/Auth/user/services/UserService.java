@@ -1,12 +1,12 @@
-package com.fatia.Auth.UserService.services;
+package com.fatia.Auth.user.services;
 
-import com.fatia.Auth.UserService.config.JwtService;
-import com.fatia.Auth.UserService.entities.Role;
-import com.fatia.Auth.UserService.entities.User;
-import com.fatia.Auth.UserService.entities.UserModel;
-import com.fatia.Auth.UserService.repositories.UserRepository;
-import com.fatia.Auth.UserService.requests.RegisterUserRequest;
-import com.fatia.Auth.UserService.requests.UpdateUserRequest;
+import com.fatia.Auth.user.config.JwtService;
+import com.fatia.Auth.user.entities.Role;
+import com.fatia.Auth.user.entities.User;
+import com.fatia.Auth.user.entities.UserModel;
+import com.fatia.Auth.user.repositories.UserRepository;
+import com.fatia.Auth.user.requests.RegisterUserRequest;
+import com.fatia.Auth.user.requests.UpdateUserRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;

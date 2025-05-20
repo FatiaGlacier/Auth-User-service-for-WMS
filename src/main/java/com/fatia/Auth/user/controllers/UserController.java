@@ -1,9 +1,9 @@
-package com.fatia.Auth.UserService.controllers;
+package com.fatia.Auth.user.controllers;
 
-import com.fatia.Auth.UserService.entities.UserModel;
-import com.fatia.Auth.UserService.requests.RegisterUserRequest;
-import com.fatia.Auth.UserService.requests.UpdateUserRequest;
-import com.fatia.Auth.UserService.services.UserService;
+import com.fatia.Auth.user.entities.UserModel;
+import com.fatia.Auth.user.requests.RegisterUserRequest;
+import com.fatia.Auth.user.requests.UpdateUserRequest;
+import com.fatia.Auth.user.services.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

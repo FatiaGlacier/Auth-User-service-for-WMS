@@ -1,4 +1,4 @@
-package com.fatia.Auth.UserService.auth;
+package com.fatia.Auth.user.auth;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;

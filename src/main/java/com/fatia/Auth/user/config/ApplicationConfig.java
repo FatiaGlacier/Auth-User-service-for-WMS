@@ -1,6 +1,6 @@
-package com.fatia.Auth.UserService.config;
+package com.fatia.Auth.user.config;
 
-import com.fatia.Auth.UserService.repositories.UserRepository;
+import com.fatia.Auth.user.repositories.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

@@ -1,6 +1,6 @@
-package com.fatia.Auth.UserService.repositories;
+package com.fatia.Auth.user.repositories;
 
-import com.fatia.Auth.UserService.entities.User;
+import com.fatia.Auth.user.entities.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

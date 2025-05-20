@@ -1,4 +1,4 @@
-package com.fatia.Auth.UserService.config;
+package com.fatia.Auth.user.config;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;

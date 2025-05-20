@@ -1,4 +1,4 @@
-package com.fatia.Auth.UserService.auth;
+package com.fatia.Auth.user.auth;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -9,7 +9,10 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class AuthenticationRequest {
+public class RegisterRequest {
     private String email;
     private String password;
+    private String firstName;
+    private String lastName;
+    private String middleName;
 }

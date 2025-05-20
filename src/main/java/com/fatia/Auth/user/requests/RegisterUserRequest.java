@@ -1,7 +1,7 @@
-package com.fatia.Auth.UserService.requests;
+package com.fatia.Auth.user.requests;
 
 
-import com.fatia.Auth.UserService.entities.Role;
+import com.fatia.Auth.user.entities.Role;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

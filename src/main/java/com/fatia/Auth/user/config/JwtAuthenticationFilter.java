@@ -1,4 +1,4 @@
-package com.fatia.Auth.UserService.config;
+package com.fatia.Auth.user.config;
 
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
